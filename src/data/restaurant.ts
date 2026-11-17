@@ -4,6 +4,7 @@ export interface RestaurantConfig {
   concept: string;
   city: string;
   establishedYear: number;
+  portfolioNotice: string;
   address: {
     street: string;
     city: string;
@@ -23,7 +24,7 @@ export interface RestaurantConfig {
   };
   socials: Array<{
     name: string;
-    href: string;
+    label: string;
   }>;
   bookingRules: string[];
 }
@@ -34,16 +35,18 @@ export const restaurantData: RestaurantConfig = {
   concept: "Contemporary European Cuisine",
   city: "Гомель",
   establishedYear: 2024,
+  portfolioNotice:
+    "BÉRÉG — концептуальный проект ресторана, созданный для демонстрации веб-дизайна и разработки.",
   address: {
-    street: "ул. Советская, 14",
+    street: "ул. Советская, 14 (концептуальная локация)",
     city: "Гомель",
     country: "Беларусь",
-    landmark: "5 минут пешком от парка Румянцевых-Паскевичей и набережной реки Сож",
+    landmark: "Концептуальное пространство рядом с парком Румянцевых-Паскевичей и набережной реки Сож",
   },
   contacts: {
-    phone: "+375297148822",
-    phoneDisplay: "+375 (29) 714-88-22",
-    email: "welcome@bereg-restaurant.by",
+    phone: "+375290000000",
+    phoneDisplay: "+375 (29) 000-00-00 (демо)",
+    email: "welcome@bereg-concept.example",
   },
   schedule: {
     weekdays: "Пн — Чт: 10:00 — 23:00",
@@ -52,13 +55,14 @@ export const restaurantData: RestaurantConfig = {
     breakfastNote: "Завтраки подаются ежедневно до 14:00",
   },
   socials: [
-    { name: "Instagram", href: "https://instagram.com" },
-    { name: "Telegram", href: "https://t.me" },
-    { name: "TripAdvisor", href: "https://tripadvisor.com" },
+    { name: "Instagram", label: "Instagram (концепт)" },
+    { name: "Telegram", label: "Telegram (концепт)" },
+    { name: "TripAdvisor", label: "TripAdvisor (концепт)" },
   ],
   bookingRules: [
-    "Подтверждение бронирования в течение 15 минут",
-    "Возможность выбора столика у окна или в уединенной зоне",
+    "Предварительная заявка: стол подтверждается администратором",
+    "Подтверждение деталей визита по телефону в течение 15 минут",
+    "Возможность выбора столика у окна или в камерной зоне",
     "Для компаний от 6 гостей действует специальное сет-меню",
   ],
 };

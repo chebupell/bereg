@@ -274,16 +274,16 @@ export function ReservationModal({ isOpen, onClose }: ReservationModalProps) {
                 <span className="block text-[10px] uppercase tracking-wider text-[#8C927E]">
                   Прямая связь с хостес
                 </span>
-                <a
-                  href={`tel:${restaurantData.contacts.phone}`}
-                  className="font-medium text-[#252823] hover:text-[#8C927E] transition-colors"
-                >
+                <span className="font-medium text-[#252823]">
                   {restaurantData.contacts.phoneDisplay}
-                </a>
+                </span>
               </div>
               <span className="text-[11px] px-2 py-0.5 bg-[#EBE7DF] text-[#4A4E45] rounded border border-[#D8D0C3]/60">
-                {restaurantData.address.street}
+                г. {restaurantData.city}
               </span>
+            </div>
+            <div className="pt-2 text-[10px] text-[#7A7E74]/80 font-light leading-relaxed">
+              {restaurantData.portfolioNotice}
             </div>
           </div>
         </aside>

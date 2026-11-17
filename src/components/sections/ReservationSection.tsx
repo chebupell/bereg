@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useSyncExternalStore } from "react";
-import { Check, Calendar } from "lucide-react";
+import { Check, Calendar, AlertCircle } from "lucide-react";
 import { restaurantData } from "@/data/restaurant";
 
 interface ReservationSectionProps {
@@ -42,27 +42,58 @@ export function ReservationSection({ onOpenModal }: ReservationSectionProps) {
   const currentDate = userDate || today;
 
   const [submitted, setSubmitted] = useState(false);
+  const [confirmedId, setConfirmedId] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const guestsCount = parseInt(formData.guests, 10) || 2;
+      const res = await fetch("/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          date: currentDate,
+          time: formData.time,
+          guests: guestsCount,
+          zone: "Основной зал",
+          comment: formData.notes,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || "Не удалось отправить заявку на бронирование");
+      }
+
+      setConfirmedId(data.bookingId || "BRG-ONLINE");
       setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setUserDate("");
-        setFormData({
-          name: "",
-          phone: "",
-          time: "19:00",
-          guests: "2 персоны",
-          notes: "",
-        });
-      }, 5000);
-    }, 600);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Произошла ошибка при отправке заявки");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleReset = () => {
+    setSubmitted(false);
+    setConfirmedId("");
+    setError(null);
+    setUserDate("");
+    setFormData({
+      name: "",
+      phone: "",
+      time: "19:00",
+      guests: "2 персоны",
+      notes: "",
+    });
   };
 
   return (
@@ -109,7 +140,7 @@ export function ReservationSection({ onOpenModal }: ReservationSectionProps) {
                   className="inline-flex items-center space-x-2 text-[12px] uppercase tracking-[0.18em] font-medium text-deep-olive underline underline-offset-4 hover:text-muted-sage transition-colors cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
-                  <span>Открыть интерактивную схему бронирования</span>
+                  <span>Открыть интерактивную схему с выбором зон стола</span>
                 </button>
               </div>
             )}
@@ -118,16 +149,28 @@ export function ReservationSection({ onOpenModal }: ReservationSectionProps) {
           {/* Right: Reservation Form Card */}
           <div className="lg:col-span-6 bg-ivory p-8 sm:p-12 border thin-border rounded-[4px] shadow-sm">
             {submitted ? (
-              <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">
+              <div className="py-10 text-center space-y-4 animate-in fade-in duration-300">
                 <div className="w-12 h-12 mx-auto rounded-full bg-deep-olive text-ivory flex items-center justify-center">
                   <Check className="w-6 h-6" />
                 </div>
+                <span className="text-[10px] uppercase tracking-[0.25em] text-muted-sage font-semibold block">
+                  Заявка № {confirmedId}
+                </span>
                 <h3 className="serif-display text-3xl text-deep-olive">
-                  Благодарим за визит
+                  Ваша заявка принята
                 </h3>
                 <p className="text-sm text-deep-olive/75 max-w-sm mx-auto font-light leading-relaxed">
-                  Ваша заявка принята. Администратор свяжется с вами по указанному телефону в течение 15 минут для подтверждения брони.
+                  Благодарим за выбор {restaurantData.name}. Обратите внимание: столик не бронируется автоматически — администратор свяжется с вами по телефону в течение 15 минут для подтверждения брони.
                 </p>
+                <div className="pt-4">
+                  <button
+                    type="button"
+                    onClick={handleReset}
+                    className="text-xs uppercase tracking-[0.16em] text-deep-olive underline underline-offset-4 hover:text-muted-sage transition-colors cursor-pointer font-medium"
+                  >
+                    Отправить ещё одну заявку
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -135,7 +178,7 @@ export function ReservationSection({ onOpenModal }: ReservationSectionProps) {
                   {/* Name */}
                   <div>
                     <label className="block text-[11px] uppercase tracking-[0.16em] text-deep-olive/70 mb-2 font-medium">
-                      Ваше имя
+                      Ваше имя *
                     </label>
                     <input
                       type="text"
@@ -152,7 +195,7 @@ export function ReservationSection({ onOpenModal }: ReservationSectionProps) {
                   {/* Phone */}
                   <div>
                     <label className="block text-[11px] uppercase tracking-[0.16em] text-deep-olive/70 mb-2 font-medium">
-                      Телефон
+                      Телефон для связи *
                     </label>
                     <input
                       type="tel"
@@ -236,10 +279,18 @@ export function ReservationSection({ onOpenModal }: ReservationSectionProps) {
                     onChange={(e) =>
                       setFormData({ ...formData, notes: e.target.value })
                     }
-                    placeholder="Столик у окна, день рождения, аллергии..."
+                    placeholder="Столик у окна, аллергии, повод для визита..."
                     className="w-full bg-ivory border thin-border px-4 py-3 text-sm text-deep-olive focus:outline-none focus:border-deep-olive transition-colors rounded-[2px] resize-none"
                   ></textarea>
                 </div>
+
+                {/* Error Banner */}
+                {error && (
+                  <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-[2px] flex items-center space-x-2">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{error}</span>
+                  </div>
+                )}
 
                 {/* Submit Button */}
                 <button
@@ -247,11 +298,11 @@ export function ReservationSection({ onOpenModal }: ReservationSectionProps) {
                   disabled={loading}
                   className="w-full py-4 bg-deep-olive text-ivory text-[12px] uppercase tracking-[0.2em] font-medium hover:bg-olive-muted transition-colors rounded-[2px] cursor-pointer disabled:opacity-50"
                 >
-                  {loading ? "Отправка..." : "Подтвердить бронирование"}
+                  {loading ? "Отправка заявки..." : "Отправить заявку на бронь"}
                 </button>
 
-                <p className="text-center text-xs text-muted-sage font-medium tracking-wide">
-                  Администратор свяжется с вами в течение 15 минут для подтверждения столика.
+                <p className="text-center text-[11px] text-muted-sage font-normal tracking-wide">
+                  Бронирование является предварительной заявкой. Хостес подтвердит столик по телефону в течение 15 минут.
                 </p>
               </form>
             )}

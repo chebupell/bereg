@@ -1,6 +1,19 @@
+"use client";
+
+import { useSyncExternalStore } from "react";
 import { restaurantData } from "@/data/restaurant";
 
+const emptySubscribe = () => () => {};
+const getYearSnapshot = () => new Date().getFullYear();
+const getServerYearSnapshot = () => 2024;
+
 export function Footer() {
+  const currentYear = useSyncExternalStore(
+    emptySubscribe,
+    getYearSnapshot,
+    getServerYearSnapshot
+  );
+
   return (
     <footer className="bg-deep-olive text-ivory py-16 sm:py-20 border-t border-deep-olive">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
@@ -13,8 +26,12 @@ export function Footer() {
             <p className="serif-display text-lg text-ivory/70 italic font-light max-w-sm">
               «{restaurantData.tagline}.»
             </p>
-            <p className="text-xs text-ivory/50 font-light uppercase tracking-widest pt-2">
+            <p className="text-xs text-ivory/50 font-light uppercase tracking-widest pt-1">
               {restaurantData.concept} • {restaurantData.city}, {restaurantData.address.country}
+            </p>
+            {/* Conceptual Portfolio Notice */}
+            <p className="text-xs text-warm-sand/80 font-light leading-relaxed pt-2 max-w-md border-l-2 border-muted-sage pl-3">
+              {restaurantData.portfolioNotice}
             </p>
           </div>
 
@@ -65,14 +82,11 @@ export function Footer() {
               {restaurantData.schedule.weekends}
             </p>
             <div className="pt-2">
-              <a
-                href={`tel:${restaurantData.contacts.phone}`}
-                className="text-sm font-medium text-ivory tracking-wider hover:text-muted-sage transition-colors block"
-              >
+              <span className="text-sm font-medium text-ivory tracking-wider block">
                 {restaurantData.contacts.phoneDisplay}
-              </a>
+              </span>
               <span className="text-[11px] text-ivory/50">
-                Стол рекомендуется бронировать заранее
+                Заявки принимаются онлайн через форму бронирования
               </span>
             </div>
           </div>
@@ -81,10 +95,10 @@ export function Footer() {
         {/* Copyright & Portfolio Disclaimer */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ivory/50 font-light tracking-wide gap-4">
           <div>
-            © {restaurantData.establishedYear} {restaurantData.name} Restaurant. Все права защищены.
+            © {currentYear} {restaurantData.name} Restaurant. Все права защищены.
           </div>
-          <div className="flex items-center space-x-6">
-            <span>Концептуальный портфолио-проект современной гастрономии</span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2 text-center sm:text-right">
+            <span>{restaurantData.portfolioNotice}</span>
             <span className="hidden sm:inline">•</span>
             <span>A Thoughtful Approach to Dining</span>
           </div>

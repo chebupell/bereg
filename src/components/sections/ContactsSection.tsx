@@ -19,24 +19,30 @@ export function ContactsSection() {
               <h2 className="serif-display text-4xl sm:text-5xl font-normal text-deep-olive mb-4">
                 Будем рады видеть вас.
               </h2>
-              <p className="text-deep-olive/70 text-sm font-light">
+              <p className="text-deep-olive/70 text-sm font-light leading-relaxed">
                 {restaurantData.name} расположен в историческом центре Гомеля, в
                 шаговой доступности от набережной реки Сож и дворцово-паркового
                 ансамбля.
               </p>
+              {/* Concept Notice */}
+              <div className="mt-4 p-4 bg-sand-light/50 border-l-2 border-muted-sage rounded-r-[2px]">
+                <p className="text-xs text-deep-olive/80 font-light leading-relaxed">
+                  {restaurantData.portfolioNotice}
+                </p>
+              </div>
             </div>
 
             {/* Information Blocks */}
             <div className="space-y-6 border-t thin-border pt-6">
               <div>
                 <span className="text-[11px] uppercase tracking-[0.2em] text-muted-sage font-semibold block mb-1">
-                  Адрес
+                  Локация
                 </span>
                 <p className="text-base text-deep-olive font-medium">
                   г. {restaurantData.address.city}, {restaurantData.address.street}
                 </p>
                 <span className="text-[11px] text-deep-olive/50 font-light block mt-0.5">
-                  Концептуальный дизайн-проект
+                  Демонстрационный концепт-проект
                 </span>
               </div>
 
@@ -63,38 +69,25 @@ export function ContactsSection() {
                   Связь & Резерв
                 </span>
                 <p className="text-base text-deep-olive font-medium tracking-wide">
-                  <a
-                    href={`tel:${restaurantData.contacts.phone}`}
-                    className="hover:text-muted-sage transition-colors"
-                  >
-                    {restaurantData.contacts.phoneDisplay}
-                  </a>
+                  {restaurantData.contacts.phoneDisplay}
                 </p>
-                <p className="text-sm text-deep-olive/70 mt-0.5">
-                  <a
-                    href={`mailto:${restaurantData.contacts.email}`}
-                    className="hover:text-deep-olive transition-colors"
-                  >
-                    {restaurantData.contacts.email}
-                  </a>
+                <p className="text-sm text-deep-olive/70 mt-0.5 font-light">
+                  {restaurantData.contacts.email}
                 </p>
               </div>
 
               <div>
                 <span className="text-[11px] uppercase tracking-[0.2em] text-muted-sage font-semibold block mb-2">
-                  Социальные сети
+                  Медиа & Сообщество
                 </span>
-                <div className="flex items-center space-x-6 text-xs uppercase tracking-[0.16em] font-medium text-deep-olive">
+                <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.16em] font-medium text-deep-olive/80">
                   {restaurantData.socials.map((social) => (
-                    <a
+                    <span
                       key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-muted-sage transition-colors"
+                      className="px-2.5 py-1 bg-ivory border thin-border rounded-[2px] text-[11px]"
                     >
-                      {social.name}
-                    </a>
+                      {social.label}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -105,7 +98,7 @@ export function ContactsSection() {
           <div className="lg:col-span-7 bg-ivory-light border thin-border rounded-[4px] overflow-hidden p-8 sm:p-10 flex flex-col justify-between min-h-[440px]">
             <div className="flex items-center justify-between mb-8 border-b thin-border pb-4">
               <span className="text-xs uppercase tracking-[0.2em] text-muted-sage font-medium">
-                Карта проезда • {restaurantData.city}
+                Карта концепта • {restaurantData.city}
               </span>
               <span className="text-xs text-deep-olive/60 font-light">
                 Парковка для гостей ресторана
@@ -142,7 +135,7 @@ export function ContactsSection() {
                 </div>
                 <div className="mt-2 bg-ivory px-3 py-1 border thin-border rounded-[2px] shadow-sm">
                   <span className="text-[11px] uppercase tracking-wider text-deep-olive font-semibold">
-                    {restaurantData.name} Restaurant
+                    {restaurantData.name} Concept
                   </span>
                 </div>
               </div>
@@ -156,7 +149,7 @@ export function ContactsSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-1.5 uppercase tracking-wider text-deep-olive font-medium hover:text-muted-sage transition-colors"
               >
-                <span>Открыть в Google Карты</span>
+                <span>Ориентир на карте</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>

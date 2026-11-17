@@ -56,7 +56,7 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-deep-olive/30 via-transparent to-transparent opacity-60"></div>
             <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between text-ivory text-xs tracking-wider uppercase">
               <span className="bg-deep-olive/80 backdrop-blur-md px-3 py-1.5 rounded-[2px] font-light">
-                Фирменная подача • Сезонное меню {restaurantData.establishedYear}
+                Фирменная подача • Сезонное меню
               </span>
               <span className="hidden sm:inline font-mono opacity-80">
                 01 / SIGNATURE
