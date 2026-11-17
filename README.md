@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BÉRÉG — Премиальный ресторан современной европейской кухни
 
-## Getting Started
+> «Вкус простых вещей. В новом прочтении»  
+> Концептуальный веб-сайт ресторана современной гастрономии в Гомеле, Беларусь.
 
-First, run the development server:
+Дизайн-система и макеты основаны на проекте Google Stitch **`BÉRÉG Restaurant Editorial Website`** (Modern Minimal / Editorial).
 
+---
+
+## 🎨 Дизайн-система
+
+- **Стиль:** Modern Minimal / Editorial
+- **Цветовая палитра:**
+  - `Ivory` (`#F5F2EC`) — основной благородный светлый фон
+  - `Ivory Light` (`#FAF8F5`) — фон акцентных блоков и карточек
+  - `Deep Olive` (`#252823`) — глубокий темный оттенок текста, кнопок и футера
+  - `Olive Muted` (`#4A4F46`) — приглушенный оливковый для курсивных акцентов
+  - `Warm Sand` (`#D8D0C3`) — теплый песочный цвет разделителей и плашек
+  - `Muted Sage` (`#8C927E`) — шалфейный акцент номеров секций и тегов
+- **Типографика:**
+  - `Cormorant Garamond` (Google Fonts) — акцидентный утонченный антиква для заголовков и цен
+  - `Manrope` (Google Fonts) — геометричный чистый гротеск для основного текста и микрокопи
+
+---
+
+## 🏗 Технологический стек
+
+- **Фреймворк:** [Next.js 16](https://nextjs.org/) (App Router, Turbopack, Partial Prerendering)
+- **Библиотека интерфейса:** [React 19](https://react.dev/)
+- **Стилизация:** [Tailwind CSS v4](https://tailwindcss.com/) (`@theme` токены)
+- **Иконки:** [Lucide React](https://lucide.dev/)
+- **Валидация:** [Zod](https://zod.dev/)
+- **Уведомления:** Telegram Bot API
+- **Язык:** TypeScript 5
+
+---
+
+## 📋 Разделы и архитектура
+
+1. **Header & Navigation:** фиксированная панель со стеклянным размытием (`backdrop-blur-nav`), логотип-вордмарк, десктопное меню с индикатором ховера и адаптивный мобильный дровер.
+2. **Hero:** слоган, асимметричная сетка фирменных подач с шильдиком «01 / SIGNATURE» и манифестом кухни.
+3. **About (02 Философия и пространство):** сезонность, чистый вкус, работа с фермерскими хозяйствами, цитата команды и архитектура интерьера.
+4. **Menu (03 Гастрономическая карта):** интерактивные вкладки (*Основные блюда*, *Завтраки*, *Десерты*, *Напитки & Вино*) с ценами в BYN, граммовками и рекомендациями сомелье.
+5. **Atmosphere (04 Галерея и моменты):** журнальная фотогалерея сервировки, интерьера и блюд с плавными оверлеями.
+6. **Reservation (05 Бронирование стола):** правила дома и карточка быстрой заявки.
+7. **ReservationModal:** интерактивное двухшаговое модальное окно (выбор гостей, интерактивный выбор даты и слотов времени, радио-карточки зон посадки: «У окон», «Основной зал», «Камерный угол», повод визита, живой предпросмотр деталей и экран подтверждения).
+8. **Contacts (06 Локация и часы работы):** контакты, график работы и авторская стилизованная векторная карта русла реки Сож.
+9. **Footer:** реквизиты, слоган, быстрая навигация и концептуальный дисклеймер.
+
+---
+
+## 🚀 Запуск проекта
+
+### 1. Установка зависимостей
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Настройка переменных окружения (опционально)
+Скопируйте `.env.example` в `.env.local`:
+```bash
+cp .env.example .env.local
+```
+Укажите свои значения для отправки уведомлений в Telegram:
+```env
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
+TELEGRAM_CHAT_ID=your_telegram_chat_id_here
+```
+*Примечание: Если токены не указаны, форма бронирования работает в режиме разработки, логируя заявки на сервере.*
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Запуск сервера разработки
+```bash
+npm run dev
+```
+Откройте [http://localhost:3000](http://localhost:3000) в браузере.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4. Сборка для продакшена
+```bash
+npm run build
+npm run start
+```

@@ -1,0 +1,750 @@
+<!-- Menu Section -->
+  <section id="menu" class="py-24 sm:py-32 lg:py-40 bg-ivory-light border-b thin-border">
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+      
+      <!-- Section Title & Narrative -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 sm:mb-20 gap-8">
+        <div>
+          <div class="flex items-center space-x-3 text-muted-sage text-[11px] uppercase tracking-[0.25em] font-semibold mb-4">
+            <span>03</span>
+            <span class="w-8 h-[1px] bg-muted-sage inline-block">
+</span>
+            <span>Гастрономическая карта</span>
+          </div>
+          <h2 class="serif-display text-4xl sm:text-6xl font-normal text-deep-olive leading-[1.08]">
+            Меню, созданное <br class="hidden sm:inline">
+            <span class="italic text-olive-muted font-light">с вниманием к деталям.</span>
+          </h2>
+        </div>
+        <p class="text-deep-olive/75 text-[15px] max-w-md font-light leading-relaxed">
+          Знакомые вкусы, новые сочетания и продукты, выбранные с особым вниманием. Все блюда подаются a la minute в авторской керамике.
+        </p>
+      </div>
+
+      <!-- Minimal Category Tabs Navigation -->
+      <div class="flex flex-wrap items-center justify-start gap-3 sm:gap-4 mb-14 border-b thin-border pb-6" role="tablist">
+        <button onclick="switchTab('mains')" id="tab-mains" class="menu-tab-btn active px-6 py-2.5 text-[13px] uppercase tracking-[0.16em] font-medium rounded-[2px] transition-all bg-deep-olive text-ivory">
+          Основные блюда
+        </button>
+        <button onclick="switchTab('breakfast')" id="tab-breakfast" class="menu-tab-btn px-6 py-2.5 text-[13px] uppercase tracking-[0.16em] font-medium rounded-[2px] transition-all border border-deep-olive/20 text-deep-olive hover:border-deep-olive">
+          Завтраки
+        </button>
+        <button onclick="switchTab('desserts')" id="tab-desserts" class="menu-tab-btn px-6 py-2.5 text-[13px] uppercase tracking-[0.16em] font-medium rounded-[2px] transition-all border border-deep-olive/20 text-deep-olive hover:border-deep-olive">
+          Десерты
+        </button>
+        <button onclick="switchTab('drinks')" id="tab-drinks" class="menu-tab-btn px-6 py-2.5 text-[13px] uppercase tracking-[0.16em] font-medium rounded-[2px] transition-all border border-deep-olive/20 text-deep-olive hover:border-deep-olive">
+          Напитки & Вино
+        </button>
+      </div>
+
+      <!-- Tab Content 1: Mains (Основные блюда) -->
+      <div id="panel-mains" class="menu-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        
+        <!-- Item 1 -->
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-deep-olive/40 hover:shadow-sm">
+          <div class="overflow-hidden aspect-[4/3] bg-warm-sand/20">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9y6EmsgiCLrwv4v-Srej1_fVkZaPbKpnrJc_kJcguPfoi9trKFE77dbLnjiJwbHW9F0B95rg5BH-QgO4d4RqBUzXwvAcCj0pHxb37R6smq2v_UhK7WrSf8VVYIkKoMze7k9Xrz9tuu-U84DBfhS0Y1afjVbcL-AMVQC9aCEFzMFlKKXHRnji2TQ_xK9BxEt0GPrAXKfsVsuMTGhqHGl86wQZI2h7cLJnZVkbLJow" alt="Утиная грудка с ежевичным демиглясом" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-baseline justify-between gap-4 mb-2">
+                <h3 class="serif-display text-2xl font-medium text-deep-olive group-hover:text-muted-sage transition-colors">Утиная грудка Магре</h3>
+                <span class="serif-display text-2xl text-deep-olive font-normal whitespace-nowrap">46 BYN</span>
+              </div>
+              <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+                Крем из томленого пастернака, терпкий ежевичный демигляс, лесные орехи и свежие побеги тимьяна.
+              </p>
+            </div>
+            <div class="pt-4 border-t thin-border flex items-center justify-between text-[11px] text-muted-sage uppercase tracking-wider">
+              <span>280 г</span>
+              <span>Рекомендация сомелье: Pinot Noir</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-deep-olive/40 hover:shadow-sm">
+          <div class="overflow-hidden aspect-[4/3] bg-warm-sand/20">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuATxyZK_iWgNFAKUT2-DBLNZNkXkmCblgykm92Zgs_pXn8nI-Q7Cv4Cg6c0qmhYKtbjnSx_p3ZDBWIMZ0kZa91aPoWZYI_CTZaBjEB6h3mwUFvwJ8Ty_5lsHABKYXQGdf33Li9gXcaAaEAdNSpe4Ua137sIotixwDkpmAkRfsx8RR4cSFBc7AX-R3vdI-1v9ZrIryr5D5rNsRswfJvJScq9H5slOdKJ9_ZSAPnr53E" alt="Крудо из дикого сибаса" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-baseline justify-between gap-4 mb-2">
+                <h3 class="serif-display text-2xl font-medium text-deep-olive group-hover:text-muted-sage transition-colors">Крудо из сибаса</h3>
+                <span class="serif-display text-2xl text-deep-olive font-normal whitespace-nowrap">38 BYN</span>
+              </div>
+              <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+                Тончайшие слайсы дикого сибаса, капли травяного эстрагонового масла, цедра калабрийского лимона и флер-де-сель.
+              </p>
+            </div>
+            <div class="pt-4 border-t thin-border flex items-center justify-between text-[11px] text-muted-sage uppercase tracking-wider">
+              <span>190 г</span>
+              <span>Raw bar • Холодные стартеры</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-deep-olive/40 hover:shadow-sm">
+          <div class="overflow-hidden aspect-[4/3] bg-warm-sand/20 relative">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg6jcX1DoxrGSB5S3McWAU50iDuOyZ7yWl3PrNezFm0j9eMQIJjqrC0wTs6UHSBc21lJEG66lW5DVQ4fQP-Lq7PuzHxcwaQtZFVTeoMDdBK5C8pqqvg8kkK3o4loJu61h5L3CHDdLnJ5av6UcnGVYr8Fw5ZJ0eImNiT1zWUjFHGGSNAejFmS4E_jBw2XeCTo8tlvU07HWURUnzs4E_uQpAO_wb65Povm9QS2Tfnso" alt="Телячьи щечки конфи" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+            <div class="absolute top-3 right-3 bg-ivory/90 backdrop-blur-sm text-[10px] uppercase tracking-[0.16em] px-2.5 py-1 text-deep-olive font-medium rounded-[2px]">
+              Шеф-выбор
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-baseline justify-between gap-4 mb-2">
+                <h3 class="serif-display text-2xl font-medium text-deep-olive group-hover:text-muted-sage transition-colors">Телячьи щёчки конфи</h3>
+                <span class="serif-display text-2xl text-deep-olive font-normal whitespace-nowrap">42 BYN</span>
+              </div>
+              <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+                12 часов томления в красном сухом вине, шелковистый крем из белых грибов, хрустящий лук шалот.
+              </p>
+            </div>
+            <div class="pt-4 border-t thin-border flex items-center justify-between text-[11px] text-muted-sage uppercase tracking-wider">
+              <span>320 г</span>
+              <span>Signature Main Course</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Tab Content 2: Breakfast (Завтраки) -->
+      <div id="panel-breakfast" class="menu-panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden p-6 flex flex-col justify-between hover:border-deep-olive/40 transition-all">
+          <div>
+            <div class="flex items-baseline justify-between gap-4 mb-2">
+              <h3 class="serif-display text-2xl font-medium text-deep-olive">Бенедикт на бриоши</h3>
+              <span class="serif-display text-2xl text-deep-olive">24 BYN</span>
+            </div>
+            <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+              Воздушная ремесленная бриошь, яйца пашот, гравлакс из лосося собственного посола, голландский соус с эстрагоном.
+            </p>
+          </div>
+          <div class="pt-4 border-t thin-border flex justify-between text-[11px] text-muted-sage uppercase">
+            <span>260 г</span>
+            <span>Подаётся до 14:00</span>
+          </div>
+        </article>
+
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden p-6 flex flex-col justify-between hover:border-deep-olive/40 transition-all">
+          <div>
+            <div class="flex items-baseline justify-between gap-4 mb-2">
+              <h3 class="serif-display text-2xl font-medium text-deep-olive">Сырники из фермерского творога</h3>
+              <span class="serif-display text-2xl text-deep-olive">19 BYN</span>
+            </div>
+            <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+              Томленый крем из белого шоколада, соус из лесной черники и хрустящая карамелизированная гречиха.
+            </p>
+          </div>
+          <div class="pt-4 border-t thin-border flex justify-between text-[11px] text-muted-sage uppercase">
+            <span>210 г</span>
+            <span>Подаётся до 14:00</span>
+          </div>
+        </article>
+
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden p-6 flex flex-col justify-between hover:border-deep-olive/40 transition-all">
+          <div>
+            <div class="flex items-baseline justify-between gap-4 mb-2">
+              <h3 class="serif-display text-2xl font-medium text-deep-olive">Зеленая гречка с яйцом су-вид</h3>
+              <span class="serif-display text-2xl text-deep-olive">21 BYN</span>
+            </div>
+            <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+              Авокадо, молодой шпинат, спаржа на гриле, стружка выдержанного пармезана и нерафинированное тыквенное масло.
+            </p>
+          </div>
+          <div class="pt-4 border-t thin-border flex justify-between text-[11px] text-muted-sage uppercase">
+            <span>250 г</span>
+            <span>Healthy Morning</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Tab Content 3: Desserts (Десерты) -->
+      <div id="panel-desserts" class="menu-panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden flex flex-col justify-between hover:border-deep-olive/40 transition-all">
+          <div class="overflow-hidden aspect-[4/3] bg-warm-sand/20">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM-ZCProwvn7ByPR4z19K2-mEBzbmo48_PLyjfPyH34Q2APJ3WNFdpET38IkZ3cyzoe28_kE09lbYkuzEzA67_g9ikURHBl7DUAdxAUMp3D951_-xgNyTWzyDsDZZ78OaGHO-vB7rCEdWkBQLAvtxHIbO9XygWNxQ5hMv743oF_6_slssxWQjLqI0K_wFyEPhxEfJzb06CXIyArWSU5ygdRiEpLu9oDjJ_25QBr0w" alt="Томленая груша с кремом маскарпоне" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-baseline justify-between gap-4 mb-2">
+                <h3 class="serif-display text-2xl font-medium text-deep-olive">Томленая груша BÉRÉG</h3>
+                <span class="serif-display text-2xl text-deep-olive font-normal whitespace-nowrap">22 BYN</span>
+              </div>
+              <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+                Груша, сваренная в пряном сиропе со специями, крем из маскарпоне с мадагаскарской ванилью, тончайший медовый тюиль.
+              </p>
+            </div>
+            <div class="pt-4 border-t thin-border flex justify-between text-[11px] text-muted-sage uppercase">
+              <span>180 г</span>
+              <span>Десертная карта</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden p-6 flex flex-col justify-between hover:border-deep-olive/40 transition-all">
+          <div>
+            <div class="flex items-baseline justify-between gap-4 mb-2">
+              <h3 class="serif-display text-2xl font-medium text-deep-olive">Шоколадный ганаш с солью</h3>
+              <span class="serif-display text-2xl text-deep-olive">20 BYN</span>
+            </div>
+            <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+              Горький эквадорский шоколад 72%, оливковое масло холодного отжима, хлопья морской соли Maldon и миндальный сабле.
+            </p>
+          </div>
+          <div class="pt-4 border-t thin-border flex justify-between text-[11px] text-muted-sage uppercase">
+            <span>150 г</span>
+            <span>Rich & Intense</span>
+          </div>
+        </article>
+
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden p-6 flex flex-col justify-between hover:border-deep-olive/40 transition-all">
+          <div>
+            <div class="flex items-baseline justify-between gap-4 mb-2">
+              <h3 class="serif-display text-2xl font-medium text-deep-olive">Миллефолье с малиной</h3>
+              <span class="serif-display text-2xl text-deep-olive">23 BYN</span>
+            </div>
+            <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+              Хрустящее карамелизированное слоеное тесто, заварной крем дипломат с бобами тонка и свежая садовая малина.
+            </p>
+          </div>
+          <div class="pt-4 border-t thin-border flex justify-between text-[11px] text-muted-sage uppercase">
+            <span>170 г</span>
+            <span>Классика кондитерской</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Tab Content 4: Drinks (Напитки & Вино) -->
+      <div id="panel-drinks" class="menu-panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden p-6 flex flex-col justify-between hover:border-deep-olive/40 transition-all">
+          <div>
+            <div class="flex items-baseline justify-between gap-4 mb-2">
+              <h3 class="serif-display text-2xl font-medium text-deep-olive">Chablis Premier Cru</h3>
+              <span class="serif-display text-2xl text-deep-olive">35 BYN / бокал</span>
+            </div>
+            <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+              Бургундия, Франция. Минеральное, сухое, с оттенками белых цветов, зеленого яблока и морского бриза.
+            </p>
+          </div>
+          <div class="pt-4 border-t thin-border flex justify-between text-[11px] text-muted-sage uppercase">
+            <span>150 мл</span>
+            <span>Белое сухое</span>
+          </div>
+        </article>
+
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden p-6 flex flex-col justify-between hover:border-deep-olive/40 transition-all">
+          <div>
+            <div class="flex items-baseline justify-between gap-4 mb-2">
+              <h3 class="serif-display text-2xl font-medium text-deep-olive">Авторский коктейль «Берег»</h3>
+              <span class="serif-display text-2xl text-deep-olive">22 BYN</span>
+            </div>
+            <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+              Дистиллят на смородиновом листе, кордиал из белого чая и бергамота, сухое игристое вино.
+            </p>
+          </div>
+          <div class="pt-4 border-t thin-border flex justify-between text-[11px] text-muted-sage uppercase">
+            <span>160 мл</span>
+            <span>Signature Mixology</span>
+          </div>
+        </article>
+
+        <article class="group bg-ivory border thin-border rounded-[3px] overflow-hidden p-6 flex flex-col justify-between hover:border-deep-olive/40 transition-all">
+          <div>
+            <div class="flex items-baseline justify-between gap-4 mb-2">
+              <h3 class="serif-display text-2xl font-medium text-deep-olive">Спешелти кофе & Травяные чаи</h3>
+              <span class="serif-display text-2xl text-deep-olive">от 8 BYN</span>
+            </div>
+            <p class="text-[13px] text-deep-olive/70 leading-relaxed font-light mb-4">
+              Фильтр-кофе Эфиопия Иргачефф натуральной обработки или сбор дикорастущих трав Полесья.
+            </p>
+          </div>
+          <div class="pt-4 border-t thin-border flex justify-between text-[11px] text-muted-sage uppercase">
+            <span>200–450 мл</span>
+            <span>Горячие напитки</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Menu Footer Note -->
+      <div class="mt-16 pt-8 border-t thin-border flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-deep-olive/60 font-light gap-4">
+        <p>Все цены указаны в белорусских рублях (BYN). Пожалуйста, сообщите официанту об индивидуальных аллергиях.</p>
+        <a href="#reservation" class="underline underline-offset-4 hover:text-deep-olive font-medium">Забронировать столик к ужину →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Atmosphere / Gallery Section -->
+  <section id="atmosphere" class="py-24 sm:py-32 lg:py-40 border-b thin-border">
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mb-16 sm:mb-20">
+        <div class="flex items-center space-x-3 text-muted-sage text-[11px] uppercase tracking-[0.25em] font-semibold mb-4">
+          <span>04</span>
+          <span class="w-8 h-[1px] bg-muted-sage inline-block">
+</span>
+          <span>Галерея и моменты</span>
+        </div>
+        <h2 class="serif-display text-4xl sm:text-6xl font-normal text-deep-olive leading-[1.08]">
+          Атмосфера, которую <br class="hidden sm:inline">
+          <span class="italic text-olive-muted font-light">хочется разделить.</span>
+        </h2>
+        <p class="text-deep-olive/70 text-[15px] mt-4 font-light">
+          Фрагменты дня в BÉRÉG: мягкие солнечные блики на льняных скатертях, звон тонкого стекла и неторопливая красота гастрономического процесса.
+        </p>
+      </div>
+
+      <!-- Asymmetrical Editorial Magazine Gallery Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+        
+        <!-- Large Left Feature: Table & Light -->
+        <div class="md:col-span-7 group relative overflow-hidden rounded-[3px] bg-warm-sand/20 aspect-[16/11]">
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqpzDnDJcnjaflA7BQv4LkBJOLP9KBF7Pe6cZFTsvld1jellp3N8mZgntBFAEsu4KdVssLBYb9H8CvjJ9OD6HM9b3dUa_kBNZWXTW_c7bs1uVo46QWiklp6h42Coh_6PSl9qn3QZwyrR-cicKIha1bBJ9_ThfWduS2H5uxzBcopqmsK7USFKtxCm-69P_RUctttqPo5pPEBIRt-2iwnCeFRUPlj2b4XHeBbb1cLIk" 
+            alt="Детали сервировки и бокал белого вина в лучах солнца" 
+            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-deep-olive/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+</div>
+          <div class="absolute bottom-6 left-6 text-ivory text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-light">
+            Сервировка стола • Натуральный лен и керамика
+          </div>
+        </div>
+
+        <!-- Right Top Feature: Duck Breast Dish Detail -->
+        <div class="md:col-span-5 group relative overflow-hidden rounded-[3px] bg-warm-sand/20 aspect-[4/3] md:aspect-auto">
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9y6EmsgiCLrwv4v-Srej1_fVkZaPbKpnrJc_kJcguPfoi9trKFE77dbLnjiJwbHW9F0B95rg5BH-QgO4d4RqBUzXwvAcCj0pHxb37R6smq2v_UhK7WrSf8VVYIkKoMze7k9Xrz9tuu-U84DBfhS0Y1afjVbcL-AMVQC9aCEFzMFlKKXHRnji2TQ_xK9BxEt0GPrAXKfsVsuMTGhqHGl86wQZI2h7cLJnZVkbLJow" 
+            alt="Утиная грудка с ежевичным соусом" 
+            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-deep-olive/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+</div>
+          <div class="absolute bottom-6 left-6 text-ivory text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-light">
+            Гастрономическая подача • Текстуры и цвет
+          </div>
+        </div>
+
+        <!-- Bottom Row Left: Poached Pear Dessert -->
+        <div class="md:col-span-4 group relative overflow-hidden rounded-[3px] bg-warm-sand/20 aspect-[4/3]">
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM-ZCProwvn7ByPR4z19K2-mEBzbmo48_PLyjfPyH34Q2APJ3WNFdpET38IkZ3cyzoe28_kE09lbYkuzEzA67_g9ikURHBl7DUAdxAUMp3D951_-xgNyTWzyDsDZZ78OaGHO-vB7rCEdWkBQLAvtxHIbO9XygWNxQ5hMv743oF_6_slssxWQjLqI0K_wFyEPhxEfJzb06CXIyArWSU5ygdRiEpLu9oDjJ_25QBr0w" 
+            alt="Десерт томленая груша с медовым тюилем" 
+            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-deep-olive/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+</div>
+          <div class="absolute bottom-6 left-6 text-ivory text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-light">
+            Кондитерское искусство • Легкость
+          </div>
+        </div>
+
+        <!-- Bottom Row Right: Dining Hall Architecture -->
+        <div class="md:col-span-8 group relative overflow-hidden rounded-[3px] bg-warm-sand/20 aspect-[16/9]">
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg6jcX1DoxrGSB5S3McWAU50iDuOyZ7yWl3PrNezFm0j9eMQIJjqrC0wTs6UHSBc21lJEG66lW5DVQ4fQP-Lq7PuzHxcwaQtZFVTeoMDdBK5C8pqqvg8kkK3o4loJu61h5L3CHDdLnJ5av6UcnGVYr8Fw5ZJ0eImNiT1zWUjFHGGSNAejFmS4E_jBw2XeCTo8tlvU07HWURUnzs4E_uQpAO_wb65Povm9QS2Tfnso" 
+            alt="Панорама зала ресторана BÉRÉG" 
+            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-deep-olive/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+</div>
+          <div class="absolute bottom-6 left-6 text-ivory text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-light">
+            Пространство встреч • Гомель, Беларусь
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Reservation Section -->
+  <section id="reservation" class="py-24 sm:py-32 lg:py-40 bg-sand-light/30 border-b thin-border">
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left: Text & Rationale -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="flex items-center space-x-3 text-muted-sage text-[11px] uppercase tracking-[0.25em] font-semibold">
+            <span>05</span>
+            <span class="w-8 h-[1px] bg-muted-sage inline-block">
+</span>
+            <span>Бронирование стола</span>
+          </div>
+
+          <h2 class="serif-display text-4xl sm:text-6xl font-normal text-deep-olive leading-[1.08]">
+            Ваш следующий <br>
+            особенный вечер <br>
+            <span class="italic text-olive-muted font-light">начинается здесь.</span>
+          </h2>
+
+          <p class="text-deep-olive/75 text-[15px] sm:text-[16px] leading-relaxed font-light">
+            Забронируйте столик и проведите время в атмосфере BÉRÉG. Мы бережно относимся к каждому визиту и подберем для вас наилучшее расположение.
+          </p>
+
+          <div class="pt-4 space-y-3 text-xs text-deep-olive/70 font-light">
+            <div class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-muted-sage">
+</span>
+              <span>Подтверждение бронирования в течение 15 минут</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-muted-sage">
+</span>
+              <span>Возможность выбора столика у окна или в уединенной зоне</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-muted-sage">
+</span>
+              <span>Для компаний от 6 гостей действует специальное сет-меню</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Reservation Form Card -->
+        <div class="lg:col-span-6 bg-ivory p-8 sm:p-12 border thin-border rounded-[4px] shadow-sm">
+          <form id="reservationForm" onsubmit="handleReservation(event)" class="space-y-6">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Name -->
+              <div>
+                <label class="block text-[11px] uppercase tracking-[0.16em] text-deep-olive/70 mb-2 font-medium">Ваше имя</label>
+                <input 
+                  type="text" 
+                  required 
+                  placeholder="Анна Ковалева" 
+                  class="w-full bg-ivory border thin-border px-4 py-3 text-sm text-deep-olive focus:outline-none focus:border-deep-olive transition-colors rounded-[2px]"
+                />
+              </div>
+
+              <!-- Phone -->
+              <div>
+                <label class="block text-[11px] uppercase tracking-[0.16em] text-deep-olive/70 mb-2 font-medium">Телефон</label>
+                <input 
+                  type="tel" 
+                  required 
+                  placeholder="+375 (29) 000-00-00" 
+                  class="w-full bg-ivory border thin-border px-4 py-3 text-sm text-deep-olive focus:outline-none focus:border-deep-olive transition-colors rounded-[2px]"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <!-- Date -->
+              <div>
+                <label class="block text-[11px] uppercase tracking-[0.16em] text-deep-olive/70 mb-2 font-medium">Дата</label>
+                <input 
+                  type="date" 
+                  required 
+                  value="2024-11-15"
+                  class="w-full bg-ivory border thin-border px-4 py-3 text-sm text-deep-olive focus:outline-none focus:border-deep-olive transition-colors rounded-[2px]"
+                />
+              </div>
+
+              <!-- Time -->
+              <div>
+                <label class="block text-[11px] uppercase tracking-[0.16em] text-deep-olive/70 mb-2 font-medium">Время</label>
+                <select class="w-full bg-ivory border thin-border px-4 py-3 text-sm text-deep-olive focus:outline-none focus:border-deep-olive transition-colors rounded-[2px]">
+                  <option>18:00</option>
+                  <option>18:30</option>
+                  <option selected>19:00</option>
+                  <option>19:30</option>
+                  <option>20:00</option>
+                  <option>20:30</option>
+                  <option>21:00</option>
+                </select>
+              </div>
+
+              <!-- Guests -->
+              <div>
+                <label class="block text-[11px] uppercase tracking-[0.16em] text-deep-olive/70 mb-2 font-medium">Гости</label>
+                <select class="w-full bg-ivory border thin-border px-4 py-3 text-sm text-deep-olive focus:outline-none focus:border-deep-olive transition-colors rounded-[2px]">
+                  <option>1 персона</option>
+                  <option selected>2 персоны</option>
+                  <option>3–4 персоны</option>
+                  <option>5–8 персон</option>
+                  <option>Мероприятие (9+)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div>
+              <label class="block text-[11px] uppercase tracking-[0.16em] text-deep-olive/70 mb-2 font-medium">Пожелания (опционально)</label>
+              <textarea 
+                rows="2" 
+                placeholder="Столик у окна, день рождения, аллергии..." 
+                class="w-full bg-ivory border thin-border px-4 py-3 text-sm text-deep-olive focus:outline-none focus:border-deep-olive transition-colors rounded-[2px] resize-none"
+              >
+</textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              class="w-full py-4 bg-deep-olive text-ivory text-[12px] uppercase tracking-[0.2em] font-medium hover:bg-olive-muted transition-colors rounded-[2px]"
+            >
+              Подтвердить бронирование
+            </button>
+
+            <p id="reservationSuccess" class="hidden text-center text-xs text-muted-sage font-medium tracking-wide">
+              Спасибо! Ваша заявка принята. Менеджер свяжется с вами в течение 10 минут.
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contacts Section -->
+  <section id="contacts" class="py-24 sm:py-32 border-b thin-border">
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+      
+      <div class="flex items-center space-x-3 text-muted-sage text-[11px] uppercase tracking-[0.25em] font-semibold mb-6">
+        <span>06</span>
+        <span class="w-8 h-[1px] bg-muted-sage inline-block">
+</span>
+        <span>Локация и часы работы</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- Left Column: Contact Data -->
+        <div class="lg:col-span-5 space-y-10">
+          <div>
+            <h2 class="serif-display text-4xl sm:text-5xl font-normal text-deep-olive mb-4">
+              Будем рады видеть вас.
+            </h2>
+            <p class="text-deep-olive/70 text-sm font-light">
+              Ресторан BÉRÉG расположен в историческом центре Гомеля, в шаговой доступности от набережной реки Сож и дворцово-паркового ансамбля.
+            </p>
+          </div>
+
+          <!-- Information Blocks -->
+          <div class="space-y-6 border-t thin-border pt-6">
+            <div>
+              <span class="text-[11px] uppercase tracking-[0.2em] text-muted-sage font-semibold block mb-1">Адрес</span>
+              <p class="text-base text-deep-olive font-medium">г. Гомель, ул. Советская, 14</p>
+              <span class="text-[11px] text-deep-olive/50 font-light block mt-0.5">Концептуальный дизайн-проект</span>
+            </div>
+
+            <div>
+              <span class="text-[11px] uppercase tracking-[0.2em] text-muted-sage font-semibold block mb-1">Время работы</span>
+              <p class="text-sm text-deep-olive font-medium">Пн — Чт: 10:00 — 23:00</p>
+              <p class="text-sm text-deep-olive font-medium">Пт — Сб: 10:00 — 00:00</p>
+              <p class="text-sm text-deep-olive font-medium">Вс: 10:00 — 23:00</p>
+              <p class="text-xs text-muted-sage mt-1">Завтраки подаются ежедневно до 14:00</p>
+            </div>
+
+            <div>
+              <span class="text-[11px] uppercase tracking-[0.2em] text-muted-sage font-semibold block mb-1">Связь & Резерв</span>
+              <p class="text-base text-deep-olive font-medium tracking-wide">+375 (29) 714-88-22</p>
+              <p class="text-sm text-deep-olive/70 mt-0.5">welcome@bereg-restaurant.by</p>
+            </div>
+
+            <div>
+              <span class="text-[11px] uppercase tracking-[0.2em] text-muted-sage font-semibold block mb-2">Социальные сети</span>
+              <div class="flex items-center space-x-6 text-xs uppercase tracking-[0.16em] font-medium text-deep-olive">
+                <a href="#" class="hover:text-muted-sage transition-colors">Instagram</a>
+                <a href="#" class="hover:text-muted-sage transition-colors">Telegram</a>
+                <a href="#" class="hover:text-muted-sage transition-colors">TripAdvisor</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Map Placeholder & Spatial Aesthetic -->
+        <div class="lg:col-span-7 bg-ivory-light border thin-border rounded-[4px] overflow-hidden p-8 sm:p-10 flex flex-col justify-between min-h-[440px]">
+          <div class="flex items-center justify-between mb-8 border-b thin-border pb-4">
+            <span class="text-xs uppercase tracking-[0.2em] text-muted-sage font-medium">Карта проезда • Гомель</span>
+            <span class="text-xs text-deep-olive/60">Парковка для гостей ресторана</span>
+          </div>
+
+          <!-- Stylized Minimal Map Graphic -->
+          <div class="relative w-full h-64 sm:h-72 bg-sand-light/50 border thin-border rounded-[2px] flex items-center justify-center overflow-hidden">
+            <!-- Decorative Map Grid Lines -->
+            <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#252823 1px, transparent 1px); background-size: 24px 24px;">
+</div>
+            <div class="absolute w-3/4 h-[1px] bg-deep-olive/15 rotate-12">
+</div>
+            <div class="absolute w-full h-[1px] bg-deep-olive/15 -rotate-45">
+</div>
+            <div class="absolute right-12 top-0 bottom-0 w-[1px] bg-muted-sage/30">
+</div>
+
+            <!-- Stylized River Sozh Contour -->
+            <div class="absolute -right-8 bottom-0 top-0 w-36 bg-[#8C927E]/15 rounded-l-full">
+</div>
+
+            <!-- Location Marker -->
+            <div class="relative z-10 flex flex-col items-center">
+              <div class="w-10 h-10 rounded-full bg-deep-olive text-ivory flex items-center justify-center shadow-lg ring-4 ring-ivory animate-pulse">
+                <span class="serif-display text-sm font-bold tracking-widest">B</span>
+              </div>
+              <div class="mt-2 bg-ivory px-3 py-1 border thin-border rounded-[2px] shadow-sm">
+                <span class="text-[11px] uppercase tracking-wider text-deep-olive font-semibold">BÉRÉG Restaurant</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-deep-olive/70 font-light">
+            <span>5 минут пешком от парка Румянцевых-Паскевичей</span>
+            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center space-x-1.5 uppercase tracking-wider text-deep-olive font-medium hover:text-muted-sage transition-colors">
+              <span>Открыть в Google Карты</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-deep-olive text-ivory py-16 sm:py-20">
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start pb-16 border-b border-ivory/15">
+        
+        <!-- Brand Wordmark & Tagline -->
+        <div class="md:col-span-5 space-y-4">
+          <span class="serif-display text-3xl sm:text-4xl tracking-[0.2em] font-light text-ivory uppercase block">BÉRÉG</span>
+          <p class="serif-display text-lg text-ivory/70 italic font-light max-w-sm">
+            «Вкус простых вещей. В новом прочтении.»
+          </p>
+          <p class="text-xs text-ivory/50 font-light uppercase tracking-widest pt-2">
+            Contemporary European Hospitality • Gomel, Belarus
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="md:col-span-3 space-y-3">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-muted-sage font-semibold block mb-4">Навигация</span>
+          <ul class="space-y-2.5 text-xs uppercase tracking-[0.16em] text-ivory/80 font-light">
+            <li>
+<a href="#about" class="hover:text-ivory transition-colors">О ресторане</a>
+</li>
+            <li>
+<a href="#menu" class="hover:text-ivory transition-colors">Гастрономическое меню</a>
+</li>
+            <li>
+<a href="#atmosphere" class="hover:text-ivory transition-colors">Атмосфера & Галерея</a>
+</li>
+            <li>
+<a href="#reservation" class="hover:text-ivory transition-colors">Забронировать стол</a>
+</li>
+            <li>
+<a href="#contacts" class="hover:text-ivory transition-colors">Контакты</a>
+</li>
+          </ul>
+        </div>
+
+        <!-- Working Hours & Direct Reserve -->
+        <div class="md:col-span-4 space-y-3">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-muted-sage font-semibold block mb-4">Прием гостей</span>
+          <p class="text-xs text-ivory/80 leading-relaxed font-light">
+            г. Гомель, ул. Советская, 14<br>
+            Ежедневно с 10:00 до 23:00 (Пт–Сб до 00:00)
+          </p>
+          <div class="pt-2">
+            <a href="tel:+375297148822" class="text-sm font-medium text-ivory tracking-wider hover:text-muted-sage transition-colors block">
+              +375 (29) 714-88-22
+            </a>
+            <span class="text-[11px] text-ivory/50">Стол рекомендуется бронировать заранее</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Project Disclaimer -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ivory/50 font-light tracking-wide gap-4">
+        <div>
+          © 2024 BÉRÉG Restaurant. Все права защищены.
+        </div>
+        <div class="flex items-center space-x-6">
+          <span>Концепт-проект современной гастрономии</span>
+          <span class="hidden sm:inline">•</span>
+          <span>A Thoughtful Approach to Dining</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Interactivity Script -->
+  <script>
+    // Tab switching for Menu Section
+    function switchTab(category) {
+      // Hide all panels
+      document.querySelectorAll('.menu-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+
+      // Reset button styles
+      document.querySelectorAll('.menu-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-deep-olive', 'text-ivory');
+        btn.classList.add('border', 'border-deep-olive/20', 'text-deep-olive');
+      });
+
+      // Show selected panel
+      const targetPanel = document.getElementById('panel-' + category);
+      if (targetPanel) {
+        targetPanel.classList.remove('hidden');
+      }
+
+      // Activate selected button
+      const targetBtn = document.getElementById('tab-' + category);
+      if (targetBtn) {
+        targetBtn.classList.remove('border', 'border-deep-olive/20', 'text-deep-olive');
+        targetBtn.classList.add('bg-deep-olive', 'text-ivory');
+      }
+    }
+
+    // Mobile Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      // Close on link click
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Reservation Form Feedback
+    function handleReservation(e) {
+      e.preventDefault();
+      const successMsg = document.getElementById('reservationSuccess');
+      if (successMsg) {
+        successMsg.classList.remove('hidden');
+      }
+      setTimeout(() => {
+        e.target.reset();
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
